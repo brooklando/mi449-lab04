@@ -2,35 +2,8 @@ body {
     font-family: Helvetica, sans-serif;
     color: #EAE8FF;
     background: #2D3142;
-    padding: 0 40px;
     text-align: center;
-}
-
-nav {
-    margin: 40px auto 0 auto;
-    width: 250px;
-    border-radius: 50px;
-    background: #212431;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
     margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    list-style-type: none;
-    margin: 0;
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 20px;
-    color: #EAE8FF;
-    text-decoration: none;
-    font-size: 1.2em;
 }
 
 h1 {
@@ -38,7 +11,7 @@ h1 {
 }
 
 h2 {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 h1 strong {
@@ -48,11 +21,11 @@ h1 strong {
     -webkit-text-fill-color: transparent;
 }
 
-img.about {
-    opacity: 0.5;
+.titletxt h1 {
+    font-size: 70px;
 }
 
-
+/*custom css properties */
 
 :root {
     --small-planet-color: rgb(0, 252, 101);
@@ -60,9 +33,11 @@ img.about {
     --large-planet-color: rgb(255, 0, 208);
 }
 
+/*grid css*/
 
 .grd {
-    margin-top: 20px;
+    position: absolute;
+    margin: 50px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: 350px;
@@ -81,12 +56,22 @@ img.about {
     line-height: 0.1;
 }
 
+/*hover effect */
+
+.grd .planet:hover{
+    background: rgb(44, 0, 114);
+    transition: 1s;
+}
+
+/*circle reusable class */
 
 .circle {
     border-radius: 50%;
     margin: 0 auto 0 auto;
     border-radius: 50%;
 }
+
+/*sizes with custom css */
 
 .circle.large {
     height: 175px;
@@ -105,3 +90,18 @@ img.about {
     width: 50px;
     background-color: var(--small-planet-color);
   }
+
+/*css for sun card */
+
+  .grd .planet.zero {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 400px;
+}
+
+.grd .planet.zero .circle {
+    width: 350px;
+    height: 350px;
+}
